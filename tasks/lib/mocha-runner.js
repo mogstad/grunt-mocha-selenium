@@ -11,6 +11,7 @@ module.exports = function(options, browser, grunt, fileGroup){
   var mocha = new Mocha(options);
 
   mocha.suite.on('pre-require', function (context, file, m) {
+    context.browser = browser;
     this.ctx.browser = browser;
   });
 
